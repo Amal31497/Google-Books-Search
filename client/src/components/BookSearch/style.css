@@ -1,0 +1,12 @@
+#searchBox{
+    width:94% !important;
+    height: 10rem !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-top: 2rem !important;
+    margin-bottom:2rem !important;
+}
+
+.searchBoxContents{
+    width: 80% !important;
+}

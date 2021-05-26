@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Card, Button, InputGroup } from 'react-bootstrap';
+import './style.css';
 
 function BookSearch(props) {
 
@@ -8,12 +9,12 @@ function BookSearch(props) {
 
 
     return (
-        <Card>
-            <Card.Title>Book Search</Card.Title>
-            <InputGroup.Text id="inputGroup-sizing-sm" placeholder="Search for your favorite books!"></InputGroup.Text>
-            <Button>Search</Button>
+        <Card id="searchBox" style={{justifyContent:"space-evenly", alignItems:'center'}}>
+            <Card.Title style={{width:'80%'}}>Book Search</Card.Title>
+            <input style={{width:'80%'}} placeholder="Look for your favorite book!"/>
+            <Button style={{width:'10%'}}>Search</Button>
         </Card>
     )
 }
 
-module.exports = BookSearch;
+export default BookSearch;
