@@ -1,7 +1,6 @@
 import React from 'react';
 import SearchTitle from '../components/SearchTitle';
-// import BookSearch from '../components/BookSearch';
-import ResultsBox from '../components/ResultsBox';
+import SavedBooks from '../components/SavedBooks';
 
 
 
@@ -10,7 +9,7 @@ function Saved() {
     return (
         <div>
             <SearchTitle />
-            <ResultsBox />
+            <SavedBooks />
         </div>
     )
 }

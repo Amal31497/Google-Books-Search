@@ -2,25 +2,10 @@ import React from 'react';
 import API from '../../utils/API';
 import { Card, Row, Col, Button } from 'react-bootstrap';
 
-import './style.css'
 
 
-const ResultsBox = React.memo(props => {
+const SavedBooks = (props) => {
     
-    const handleSubmit = (title,authors,description,image,link) => {
-        API.saveBook(
-            {title:title,
-            authors:[...authors],
-            description:description,
-            image:image,
-            link:link})
-            .then(res => {
-                console.log(res);
-            })
-            .catch(error => {
-                console.error(error)
-            })
-    }
 
     return (
         <Card id="resultsBox" style={{paddingTop:"20px"}}>
@@ -36,10 +21,10 @@ const ResultsBox = React.memo(props => {
                                 <Row style={{marginBottom:"2px"}}>
                                     <Col xs={12} md={8} lg={8} style={{}}>
                                         <Col style={{float:"left", textAlign:"left"}}>
-                                            <h4 ><strong>{book.volumeInfo.title}</strong></h4>
-                                            <p><strong>{book.volumeInfo.subtitle}</strong></p>
+                                            <h4 ><strong>{}</strong></h4>
+                                            <p><strong>{}</strong></p>
                                             <hr/>
-                                            <p>Written by : {[book.volumeInfo.authors]}</p>
+                                            <p>Written by : {}</p>
                                         </Col>
                                     </Col>
                                     <Col xs={12} md={4} lg={4} >
@@ -57,7 +42,7 @@ const ResultsBox = React.memo(props => {
                                                 backgroundImage: "linear-gradient(45deg, #FFC107 0%, #ff8b5f 100%)",
                                                 transition: ".4s"
                                             }}
-                                            href={book.volumeInfo.infoLink} 
+                                            // href={} 
                                             target="blank"
                                         >View
                                         </Button>
@@ -74,7 +59,7 @@ const ResultsBox = React.memo(props => {
                                                 backgroundImage: "linear-gradient(45deg, #FFC107 0%, #ff8b5f 100%)",
                                                 transition: ".4s",
                                                 }}
-                                            onClick={() => handleSubmit(book.volumeInfo.title,[book.volumeInfo.authors], book.volumeInfo.description, book.volumeInfo.imageLinks.thumbnail, book.volumeInfo.infoLink)}
+                                            // onClick={() => handleSubmit(book.volumeInfo.title,[book.volumeInfo.authors], book.volumeInfo.description, book.volumeInfo.imageLinks.thumbnail, book.volumeInfo.infoLink)}
                                             >
                                         Save
                                         </Button>
@@ -82,10 +67,10 @@ const ResultsBox = React.memo(props => {
                                 </Row>
                                 <Row>
                                     <Col xs={12} md={5} lg={4} >
-                                        <img  src={book.volumeInfo.imageLinks.thumbnail} alt={book.volumeInfo.title} style={{ width: "15.5rem", height: "18.5rem", float:"left"}} />
+                                        {/* <img  src={} alt={} style={{ width: "15.5rem", height: "18.5rem", float:"left"}} /> */}
                                     </Col>
                                     <Col xs={12} md={7} lg={8}>
-                                        <p style={{lineHeight:"2.3rem", display:"flex", textAlign:"left"}}><span><h1 style={{fontFamily:"Cinzel Decorative, cursive", fontSize:"2rem"}}>{book.volumeInfo.description.split("")[0]}</h1></span>{book.volumeInfo.description.split("").splice(1,book.volumeInfo.description.split("").length).join("")}</p>
+                                        {/* <p style={{lineHeight:"2.3rem", display:"flex", textAlign:"left"}}><span><h1 style={{fontFamily:"Cinzel Decorative, cursive", fontSize:"2rem"}}>{book.volumeInfo.description.split("")[0]}</h1></span>{book.volumeInfo.description.split("").splice(1,book.volumeInfo.description.split("").length).join("")}</p> */}
                                     </Col>
                                 </Row>
                             </Card>
@@ -96,6 +81,6 @@ const ResultsBox = React.memo(props => {
             </Card.Body>
         </Card>
     )
-}) 
+}
 
-export default ResultsBox;
+export default SavedBooks;
