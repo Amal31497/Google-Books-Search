@@ -7,3 +7,6 @@ router.route("/")
 
 router.route("/:id")
     .delete(booksController.removeBook)
+
+
+module.exports = router;

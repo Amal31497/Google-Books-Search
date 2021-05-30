@@ -2,8 +2,8 @@ import axios from "axios";
 const BASEURL = "https://www.googleapis.com/books/v1/volumes?q=";
 const APIKEY = "&key=AIzaSyAyS5JORNcOvvGYQeJgQT87aWIcOY04ad4&maxResults=5";
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default {
-
     // ------ Search Page ------
 
     search: function (query) {
