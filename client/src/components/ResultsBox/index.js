@@ -2,6 +2,7 @@ import React from 'react';
 import API from '../../utils/API';
 import { Card, Row, Col, Button } from 'react-bootstrap';
 
+import { AiOutlineSave } from 'react-icons/ai';
 import './style.css'
 
 
@@ -32,7 +33,7 @@ const ResultsBox = React.memo(props => {
                     return (
 
                         <Row style={{ justifyContent: "center", marginTop:"10px", marginBottom:"10px" }}>
-                            <Card style={{ width: "65rem", padding:"30px", borderWidth:"4px" }}>
+                            <Card style={{ width: "80rem", padding:"30px", borderWidth:"4px" }}>
                                 <Row style={{marginBottom:"2px"}}>
                                     <Col xs={12} md={8} lg={8} style={{}}>
                                         <Col style={{float:"left", textAlign:"left"}}>
@@ -75,8 +76,8 @@ const ResultsBox = React.memo(props => {
                                                 transition: ".4s",
                                                 }}
                                             onClick={() => handleSubmit(book.volumeInfo.title,[book.volumeInfo.authors], book.volumeInfo.description, book.volumeInfo.imageLinks.thumbnail, book.volumeInfo.infoLink)}
-                                            >
-                                        Save
+                                        >
+                                        Save <AiOutlineSave />
                                         </Button>
                                     </Col>
                                 </Row>

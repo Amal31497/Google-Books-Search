@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import SearchTitle from '../components/SearchTitle';
 import BookSearch from '../components/BookSearch';
 import ResultsBox from '../components/ResultsBox';
 import API from '../utils/API';
-
 
 
 function Search() {
@@ -20,10 +19,13 @@ function Search() {
         event.preventDefault();
         setSearchActivated(true)
         API.search(search)
-        .then(res => setBooks(res))
+        .then(res => {
+            console.log(res)
+            setBooks(res)
+        })
         .catch(err => console.log(err))
-
     }
+
 
     return (
         <div>

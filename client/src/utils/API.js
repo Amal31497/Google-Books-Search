@@ -1,11 +1,10 @@
 import axios from "axios";
 const BASEURL = "https://www.googleapis.com/books/v1/volumes?q=";
-const APIKEY = "&key=AIzaSyAyS5JORNcOvvGYQeJgQT87aWIcOY04ad4&maxResults=5";
+const APIKEY = "&key=AIzaSyAyS5JORNcOvvGYQeJgQT87aWIcOY04ad4&maxResults=8";
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
     // ------ Search Page ------
-
     search: function (query) {
         return axios.get(BASEURL + query + APIKEY);
     },
@@ -16,7 +15,6 @@ export default {
     },
 
     // ------ Saved Page ------
-
     getBooks: function () {
         return axios.get("/api/books");
     },
