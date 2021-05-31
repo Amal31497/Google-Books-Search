@@ -1,7 +1,6 @@
 import React from 'react';
 import API from '../../utils/API';
 import { Card, Row, Col, Button } from 'react-bootstrap';
-
 import { AiOutlineSave } from 'react-icons/ai';
 import './style.css'
 
@@ -11,7 +10,7 @@ const ResultsBox = React.memo(props => {
     const handleSubmit = (title,authors,description,image,link) => {
         API.saveBook(
             {title:title,
-            authors:[...authors],
+            authors:authors,
             description:description,
             image:image,
             link:link})
@@ -22,8 +21,9 @@ const ResultsBox = React.memo(props => {
                 console.error(error)
             })
     }
-
+    
     return (
+        <>
         <Card id="resultsBox" style={{paddingTop:"20px"}}>
             <Card.Title><h3>Results</h3></Card.Title>
             <Card.Body>
@@ -31,7 +31,7 @@ const ResultsBox = React.memo(props => {
                     (props.activated === true && props.books.data)?
                     props.books.data.items.map(book => {
                     return (
-
+                        
                         <Row style={{ justifyContent: "center", marginTop:"10px", marginBottom:"10px" }}>
                             <Card style={{ width: "80rem", padding:"30px", borderWidth:"4px" }}>
                                 <Row style={{marginBottom:"2px"}}>
@@ -75,7 +75,7 @@ const ResultsBox = React.memo(props => {
                                                 backgroundImage: "linear-gradient(45deg, #FFC107 0%, #ff8b5f 100%)",
                                                 transition: ".4s",
                                                 }}
-                                            onClick={() => handleSubmit(book.volumeInfo.title,[book.volumeInfo.authors], book.volumeInfo.description, book.volumeInfo.imageLinks.thumbnail, book.volumeInfo.infoLink)}
+                                            onClick={() => handleSubmit(book.volumeInfo.title,book.volumeInfo.authors, book.volumeInfo.description, book.volumeInfo.imageLinks.thumbnail, book.volumeInfo.infoLink)}
                                         >
                                         Save <AiOutlineSave />
                                         </Button>
@@ -96,6 +96,7 @@ const ResultsBox = React.memo(props => {
                 }
             </Card.Body>
         </Card>
+        </>
     )
 }) 
 

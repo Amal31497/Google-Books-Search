@@ -10,7 +10,6 @@ module.exports = {
     findBookById: function (req, res) {
         db.Book
             .findById(req.params.id)
-            .populate("authors")
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
     },

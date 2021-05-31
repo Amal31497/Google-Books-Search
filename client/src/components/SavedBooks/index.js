@@ -8,7 +8,6 @@ import { useHistory } from 'react-router-dom';
 const SavedBooks = (props) => {
 
     const history = useHistory();
-
     const [books, setBooks] = useState([])
 
     // Load all books and store them with setBooks
@@ -23,7 +22,6 @@ const SavedBooks = (props) => {
             .catch(err => console.log(err));
     };
 
-
     const deleteBook = (bookId) => {
         API.deleteBook(bookId)
             .then(res => {
@@ -34,10 +32,9 @@ const SavedBooks = (props) => {
             .catch(err => console.log(err))
     }
 
-
     return (
         <Card id="resultsBox" style={{paddingTop:"20px"}}>
-            <Card.Title><h3>Results</h3></Card.Title>
+            <Card.Title><h3>Your saved books</h3></Card.Title>
             <Card.Body>
                 {
                     (books)?
@@ -51,7 +48,7 @@ const SavedBooks = (props) => {
                                         <Col style={{float:"left", textAlign:"left"}}>
                                             <h4><strong>{book.title}</strong></h4>
                                             <hr/>
-                                            <p>Written by : </p>
+                                            <p>Written by : {book.authors}</p>
                                         </Col>
                                     </Col>
                                     <Col xs={12} md={4} lg={4} >
