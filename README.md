@@ -15,6 +15,7 @@
   ##### * [Technologies used](#Technologies)
   ##### * [Usage walkthrough](#Walkthrough)
   ##### * [Credits](#Credits)
+  ##### * [Contributing](#Contributing)
   ##### * [License](#License)
   ##### * [Contact Info](#Contact)
 
@@ -28,6 +29,13 @@
   ![Screenshot](./Assets/screenshot1.png)
   ![Screenshot](./Assets/screenshot2.png)
   ![Screenshot](./Assets/screenshot3.png)
+  
+  ## Contributing:
+  To contribute to this repo:
+
+  -Fork the repo
+  -Make changes to forked repo
+  -Submit a pull request to this repo
   
   ## Credits:
   [w3schools.com](w3schools.com)
